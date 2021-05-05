@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "tratamientoMedicamento": {
+      "home": {
+        "title": "Tratamiento Medicamentos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Tratamiento Medicamento",
+        "createOrEditLabel": "Crear o editar Tratamiento Medicamento",
+        "notFound": "Ningún Tratamiento Medicamentos encontrado"
+      },
+      "created": "Un nuevo Tratamiento Medicamento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tratamiento Medicamento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tratamiento Medicamento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tratamiento Medicamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Tratamiento Medicamento"
+      },
+      "id": "ID",
+      "dosis": "Dosis",
+      "intensidad": "Intensidad",
+      "tratamieto": "Tratamieto",
+      "medicamento": "Medicamento"
+    }
+  }
+}

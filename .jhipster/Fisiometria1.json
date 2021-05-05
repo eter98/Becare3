@@ -1,0 +1,55 @@
+{
+  "name": "Fisiometria1",
+  "fields": [
+    {
+      "fieldName": "ritmoCardiaco",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ritmoRespiratorio",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "oximetria",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "presionArterialSistolica",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "presionArterialDiastolica",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "temperatura",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "fechaRegistro",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaToma",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "fisiometria1",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "fisiometria_1",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145540"
+}

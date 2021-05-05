@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-medicamento-heading"
+        data-cy="MedicamentoCreateUpdateHeading"
+        jhiTranslate="becare3App.medicamento.home.createOrEditLabel"
+      >
+        Create or edit a Medicamento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.medicamento.nombre" for="field_nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="field_nombre" data-cy="nombre" formControlName="nombre" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.medicamento.descripcion" for="field_descripcion">Descripcion</label>
+          <textarea
+            class="form-control"
+            name="descripcion"
+            id="field_descripcion"
+            data-cy="descripcion"
+            formControlName="descripcion"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.medicamento.fechaIngreso" for="field_fechaIngreso"
+            >Fecha Ingreso</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_fechaIngreso"
+              data-cy="fechaIngreso"
+              type="datetime-local"
+              class="form-control"
+              name="fechaIngreso"
+              formControlName="fechaIngreso"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.medicamento.presentacion" for="field_presentacion">Presentacion</label>
+          <select class="form-control" name="presentacion" formControlName="presentacion" id="field_presentacion" data-cy="presentacion">
+            <option [ngValue]="null">{{ 'becare3App.Presentacion.null' | translate }}</option>
+            <option value="Comprimido">{{ 'becare3App.Presentacion.Comprimido' | translate }}</option>
+            <option value="Gragea">{{ 'becare3App.Presentacion.Gragea' | translate }}</option>
+            <option value="Capsula">{{ 'becare3App.Presentacion.Capsula' | translate }}</option>
+            <option value="Polvo">{{ 'becare3App.Presentacion.Polvo' | translate }}</option>
+            <option value="Pildora">{{ 'becare3App.Presentacion.Pildora' | translate }}</option>
+            <option value="Unguento">{{ 'becare3App.Presentacion.Unguento' | translate }}</option>
+            <option value="Pomada">{{ 'becare3App.Presentacion.Pomada' | translate }}</option>
+            <option value="Crema">{{ 'becare3App.Presentacion.Crema' | translate }}</option>
+            <option value="Pasta">{{ 'becare3App.Presentacion.Pasta' | translate }}</option>
+            <option value="Solucion">{{ 'becare3App.Presentacion.Solucion' | translate }}</option>
+            <option value="Jarabe">{{ 'becare3App.Presentacion.Jarabe' | translate }}</option>
+            <option value="Suspension">{{ 'becare3App.Presentacion.Suspension' | translate }}</option>
+            <option value="Emulsion">{{ 'becare3App.Presentacion.Emulsion' | translate }}</option>
+            <option value="Locion">{{ 'becare3App.Presentacion.Locion' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.medicamento.generico" for="field_generico">Generico</label>
+          <textarea class="form-control" name="generico" id="field_generico" data-cy="generico" formControlName="generico"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

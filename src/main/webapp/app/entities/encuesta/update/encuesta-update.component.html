@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-encuesta-heading" data-cy="EncuestaCreateUpdateHeading" jhiTranslate="becare3App.encuesta.home.createOrEditLabel">
+        Create or edit a Encuesta
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.fecha" for="field_fecha">Fecha</label>
+          <div class="d-flex">
+            <input
+              id="field_fecha"
+              data-cy="fecha"
+              type="datetime-local"
+              class="form-control"
+              name="fecha"
+              formControlName="fecha"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.debilidad" for="field_debilidad">Debilidad</label>
+          <input type="checkbox" class="form-check" name="debilidad" id="field_debilidad" data-cy="debilidad" formControlName="debilidad" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.cefalea" for="field_cefalea">Cefalea</label>
+          <input type="checkbox" class="form-check" name="cefalea" id="field_cefalea" data-cy="cefalea" formControlName="cefalea" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.calambres" for="field_calambres">Calambres</label>
+          <input type="checkbox" class="form-check" name="calambres" id="field_calambres" data-cy="calambres" formControlName="calambres" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.nauseas" for="field_nauseas">Nauseas</label>
+          <input type="checkbox" class="form-check" name="nauseas" id="field_nauseas" data-cy="nauseas" formControlName="nauseas" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.vomito" for="field_vomito">Vomito</label>
+          <input type="checkbox" class="form-check" name="vomito" id="field_vomito" data-cy="vomito" formControlName="vomito" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.mareo" for="field_mareo">Mareo</label>
+          <input type="checkbox" class="form-check" name="mareo" id="field_mareo" data-cy="mareo" formControlName="mareo" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.ninguna" for="field_ninguna">Ninguna</label>
+          <input type="checkbox" class="form-check" name="ninguna" id="field_ninguna" data-cy="ninguna" formControlName="ninguna" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.encuesta.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

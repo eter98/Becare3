@@ -1,0 +1,115 @@
+{
+  "name": "Paciente",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipoIdentificacion",
+      "fieldType": "Identificaciont",
+      "fieldValues": "CEDULA,TARJETA,IDENTIDAD,CEDULA_EXTRANJERIA,PASAPORTE,OTRO"
+    },
+    {
+      "fieldName": "identificacion",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "edad",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sexo",
+      "fieldType": "Sexop",
+      "fieldValues": "FEMENINO,MASCULINO,OTRO"
+    },
+    {
+      "fieldName": "pesoKG",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "estaturaCM",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "oximetriaReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "temperaturaReferencia",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "ritmoCardiacoReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "presionSistolicaReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "presionDistolicaReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comentarios",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "pasosReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "caloriasReferencia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "metaReferencia",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "condicion",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "condicion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "iPS",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "ips",
+      "otherEntityField": "nombre"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "user"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tratamieto",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "tratamiento"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "farmaceutica",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "farmaceutica"
+    }
+  ],
+  "entityTableName": "paciente",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145547"
+}

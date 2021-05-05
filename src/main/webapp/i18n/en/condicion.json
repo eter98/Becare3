@@ -1,0 +1,25 @@
+{
+  "becare3App": {
+    "condicion": {
+      "home": {
+        "title": "Condicions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Condicion",
+        "createOrEditLabel": "Create or edit a Condicion",
+        "notFound": "No Condicions found"
+      },
+      "created": "A new Condicion is created with identifier {{ param }}",
+      "updated": "A Condicion is updated with identifier {{ param }}",
+      "deleted": "A Condicion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Condicion {{ id }}?"
+      },
+      "detail": {
+        "title": "Condicion"
+      },
+      "id": "ID",
+      "condicion": "Condicion",
+      "descripcion": "Descripcion"
+    }
+  }
+}

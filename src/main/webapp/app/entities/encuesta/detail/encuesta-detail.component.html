@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="encuesta">
+      <h2 data-cy="encuestaDetailsHeading"><span jhiTranslate="becare3App.encuesta.detail.title">Encuesta</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ encuesta.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.fecha">Fecha</span></dt>
+        <dd>
+          <span>{{ encuesta.fecha | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.debilidad">Debilidad</span></dt>
+        <dd>
+          <span>{{ encuesta.debilidad }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.cefalea">Cefalea</span></dt>
+        <dd>
+          <span>{{ encuesta.cefalea }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.calambres">Calambres</span></dt>
+        <dd>
+          <span>{{ encuesta.calambres }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.nauseas">Nauseas</span></dt>
+        <dd>
+          <span>{{ encuesta.nauseas }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.vomito">Vomito</span></dt>
+        <dd>
+          <span>{{ encuesta.vomito }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.mareo">Mareo</span></dt>
+        <dd>
+          <span>{{ encuesta.mareo }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.ninguna">Ninguna</span></dt>
+        <dd>
+          <span>{{ encuesta.ninguna }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.encuesta.user">User</span></dt>
+        <dd>
+          <span>{{ encuesta.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/encuesta', encuesta.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

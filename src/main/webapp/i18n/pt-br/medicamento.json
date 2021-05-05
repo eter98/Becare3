@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "medicamento": {
+      "home": {
+        "title": "Medicamentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Medicamento",
+        "createOrEditLabel": "Criar ou editar Medicamento",
+        "notFound": "Nenhum Medicamento encontrado"
+      },
+      "created": "Um novo Medicamento foi criado com o identificador {{ param }}",
+      "updated": "Um Medicamento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Medicamento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Medicamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Medicamento"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "fechaIngreso": "Fecha Ingreso",
+      "presentacion": "Presentacion",
+      "generico": "Generico"
+    }
+  }
+}

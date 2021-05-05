@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "temperatura": {
+      "home": {
+        "title": "Temperaturas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Temperatura",
+        "createOrEditLabel": "Crear o editar Temperatura",
+        "notFound": "Ningún Temperaturas encontrado"
+      },
+      "created": "Un nuevo Temperatura ha sido creado con el identificador {{ param }}",
+      "updated": "Un Temperatura ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Temperatura ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Temperatura {{ id }}?"
+      },
+      "detail": {
+        "title": "Temperatura"
+      },
+      "id": "ID",
+      "temperatura": "Temperatura",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

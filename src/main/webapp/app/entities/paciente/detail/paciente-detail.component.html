@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="paciente">
+      <h2 data-cy="pacienteDetailsHeading"><span jhiTranslate="becare3App.paciente.detail.title">Paciente</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ paciente.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ paciente.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.tipoIdentificacion">Tipo Identificacion</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'becare3App.Identificaciont.' + paciente.tipoIdentificacion }}">{{ paciente.tipoIdentificacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.identificacion">Identificacion</span></dt>
+        <dd>
+          <span>{{ paciente.identificacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.edad">Edad</span></dt>
+        <dd>
+          <span>{{ paciente.edad }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.sexo">Sexo</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'becare3App.Sexop.' + paciente.sexo }}">{{ paciente.sexo }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.pesoKG">Peso KG</span></dt>
+        <dd>
+          <span>{{ paciente.pesoKG }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.estaturaCM">Estatura CM</span></dt>
+        <dd>
+          <span>{{ paciente.estaturaCM }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.oximetriaReferencia">Oximetria Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.oximetriaReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.temperaturaReferencia">Temperatura Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.temperaturaReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.ritmoCardiacoReferencia">Ritmo Cardiaco Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.ritmoCardiacoReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.presionSistolicaReferencia">Presion Sistolica Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.presionSistolicaReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.presionDistolicaReferencia">Presion Distolica Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.presionDistolicaReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.comentarios">Comentarios</span></dt>
+        <dd>
+          <span>{{ paciente.comentarios }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.pasosReferencia">Pasos Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.pasosReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.caloriasReferencia">Calorias Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.caloriasReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.metaReferencia">Meta Referencia</span></dt>
+        <dd>
+          <span>{{ paciente.metaReferencia }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.condicion">Condicion</span></dt>
+        <dd>
+          <div *ngIf="paciente.condicion">
+            <a [routerLink]="['/condicion', paciente.condicion?.id, 'view']">{{ paciente.condicion?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.ips">Ips</span></dt>
+        <dd>
+          <div *ngIf="paciente.ips">
+            <a [routerLink]="['/ips', paciente.ips?.id, 'view']">{{ paciente.ips?.nombre }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.user">User</span></dt>
+        <dd>
+          <span>{{ paciente.user?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.tratamiento">Tratamiento</span></dt>
+        <dd>
+          <div *ngIf="paciente.tratamiento">
+            <a [routerLink]="['/tratamieto', paciente.tratamiento?.id, 'view']">{{ paciente.tratamiento?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="becare3App.paciente.farmaceutica">Farmaceutica</span></dt>
+        <dd>
+          <div *ngIf="paciente.farmaceutica">
+            <a [routerLink]="['/farmaceutica', paciente.farmaceutica?.id, 'view']">{{ paciente.farmaceutica?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/paciente', paciente.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "becare3App": {
+    "Sexop": {
+      "null": "",
+      "FEMENINO": "FEMENINO",
+      "MASCULINO": "MASCULINO",
+      "OTRO": "OTRO"
+    }
+  }
+}

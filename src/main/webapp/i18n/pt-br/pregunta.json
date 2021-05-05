@@ -1,0 +1,25 @@
+{
+  "becare3App": {
+    "pregunta": {
+      "home": {
+        "title": "Preguntas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Pregunta",
+        "createOrEditLabel": "Criar ou editar Pregunta",
+        "notFound": "Nenhum Pregunta encontrado"
+      },
+      "created": "Um novo Pregunta foi criado com o identificador {{ param }}",
+      "updated": "Um Pregunta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pregunta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pregunta {{ id }}?"
+      },
+      "detail": {
+        "title": "Pregunta"
+      },
+      "id": "ID",
+      "pregunta": "Pregunta",
+      "condicion": "Condicion"
+    }
+  }
+}

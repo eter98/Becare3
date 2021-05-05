@@ -1,0 +1,40 @@
+{
+  "name": "Notificacion",
+  "fields": [
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaActualizacion",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tipoNotificacion",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tokenDisp",
+      "otherEntityRelationshipName": "notificacion",
+      "relationshipName": "token",
+      "otherEntityField": "tokenConexion"
+    }
+  ],
+  "entityTableName": "notificacion",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145545"
+}

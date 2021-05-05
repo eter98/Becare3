@@ -1,0 +1,104 @@
+<div>
+  <h2 id="page-heading" data-cy="TratamientoMedicamentoHeading">
+    <span jhiTranslate="becare3App.tratamientoMedicamento.home.title">Tratamiento Medicamentos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="becare3App.tratamientoMedicamento.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-tratamiento-medicamento"
+        [routerLink]="['/tratamiento-medicamento/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="becare3App.tratamientoMedicamento.home.createLabel"> Create a new Tratamiento Medicamento </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="tratamientoMedicamentos?.length === 0">
+    <span jhiTranslate="becare3App.tratamientoMedicamento.home.notFound">No tratamientoMedicamentos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="tratamientoMedicamentos && tratamientoMedicamentos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dosis">
+            <span jhiTranslate="becare3App.tratamientoMedicamento.dosis">Dosis</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="intensidad">
+            <span jhiTranslate="becare3App.tratamientoMedicamento.intensidad">Intensidad</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tratamieto.id">
+            <span jhiTranslate="becare3App.tratamientoMedicamento.tratamieto">Tratamieto</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="medicamento.id">
+            <span jhiTranslate="becare3App.tratamientoMedicamento.medicamento">Medicamento</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let tratamientoMedicamento of tratamientoMedicamentos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/tratamiento-medicamento', tratamientoMedicamento.id, 'view']">{{ tratamientoMedicamento.id }}</a>
+          </td>
+          <td>{{ tratamientoMedicamento.dosis }}</td>
+          <td>{{ tratamientoMedicamento.intensidad }}</td>
+          <td>
+            <div *ngIf="tratamientoMedicamento.tratamieto">
+              <a [routerLink]="['/tratamieto', tratamientoMedicamento.tratamieto?.id, 'view']">{{
+                tratamientoMedicamento.tratamieto?.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="tratamientoMedicamento.medicamento">
+              <a [routerLink]="['/medicamento', tratamientoMedicamento.medicamento?.id, 'view']">{{
+                tratamientoMedicamento.medicamento?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/tratamiento-medicamento', tratamientoMedicamento.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/tratamiento-medicamento', tratamientoMedicamento.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(tratamientoMedicamento)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

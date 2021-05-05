@@ -1,0 +1,44 @@
+{
+  "becare3App": {
+    "paciente": {
+      "home": {
+        "title": "Pacientes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Paciente",
+        "createOrEditLabel": "Create or edit a Paciente",
+        "notFound": "No Pacientes found"
+      },
+      "created": "A new Paciente is created with identifier {{ param }}",
+      "updated": "A Paciente is updated with identifier {{ param }}",
+      "deleted": "A Paciente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Paciente {{ id }}?"
+      },
+      "detail": {
+        "title": "Paciente"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "tipoIdentificacion": "Tipo Identificacion",
+      "identificacion": "Identificacion",
+      "edad": "Edad",
+      "sexo": "Sexo",
+      "pesoKG": "Peso KG",
+      "estaturaCM": "Estatura CM",
+      "oximetriaReferencia": "Oximetria Referencia",
+      "temperaturaReferencia": "Temperatura Referencia",
+      "ritmoCardiacoReferencia": "Ritmo Cardiaco Referencia",
+      "presionSistolicaReferencia": "Presion Sistolica Referencia",
+      "presionDistolicaReferencia": "Presion Distolica Referencia",
+      "comentarios": "Comentarios",
+      "pasosReferencia": "Pasos Referencia",
+      "caloriasReferencia": "Calorias Referencia",
+      "metaReferencia": "Meta Referencia",
+      "condicion": "Condicion",
+      "ips": "Ips",
+      "user": "User",
+      "tratamiento": "Tratamiento",
+      "farmaceutica": "Farmaceutica"
+    }
+  }
+}

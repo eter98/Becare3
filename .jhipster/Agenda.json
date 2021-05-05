@@ -1,0 +1,27 @@
+{
+  "name": "Agenda",
+  "fields": [
+    {
+      "fieldName": "horaMedicamento",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "medicamento",
+      "otherEntityRelationshipName": "agenda",
+      "relationshipName": "medicamento"
+    }
+  ],
+  "entityTableName": "agenda",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145532"
+}

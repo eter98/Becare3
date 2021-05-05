@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "oximetria": {
+      "home": {
+        "title": "Oximetrias",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Oximetria",
+        "createOrEditLabel": "Crear o editar Oximetria",
+        "notFound": "Ningún Oximetrias encontrado"
+      },
+      "created": "Un nuevo Oximetria ha sido creado con el identificador {{ param }}",
+      "updated": "Un Oximetria ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Oximetria ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Oximetria {{ id }}?"
+      },
+      "detail": {
+        "title": "Oximetria"
+      },
+      "id": "ID",
+      "oximetria": "Oximetria",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

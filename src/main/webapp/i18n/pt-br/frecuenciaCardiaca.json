@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "frecuenciaCardiaca": {
+      "home": {
+        "title": "Frecuencia Cardiacas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Frecuencia Cardiaca",
+        "createOrEditLabel": "Criar ou editar Frecuencia Cardiaca",
+        "notFound": "Nenhum Frecuencia Cardiaca encontrado"
+      },
+      "created": "Um novo Frecuencia Cardiaca foi criado com o identificador {{ param }}",
+      "updated": "Um Frecuencia Cardiaca foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Frecuencia Cardiaca foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Frecuencia Cardiaca {{ id }}?"
+      },
+      "detail": {
+        "title": "Frecuencia Cardiaca"
+      },
+      "id": "ID",
+      "frecuenciaCardiaca": "Frecuencia Cardiaca",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

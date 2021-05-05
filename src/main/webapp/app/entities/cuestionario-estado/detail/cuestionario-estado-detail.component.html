@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cuestionarioEstado">
+      <h2 data-cy="cuestionarioEstadoDetailsHeading">
+        <span jhiTranslate="becare3App.cuestionarioEstado.detail.title">Cuestionario Estado</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cuestionarioEstado.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.cuestionarioEstado.valor">Valor</span></dt>
+        <dd>
+          <span>{{ cuestionarioEstado.valor }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.cuestionarioEstado.valoracion">Valoracion</span></dt>
+        <dd>
+          <span>{{ cuestionarioEstado.valoracion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.cuestionarioEstado.pregunta">Pregunta</span></dt>
+        <dd>
+          <div *ngIf="cuestionarioEstado.pregunta">
+            <a [routerLink]="['/pregunta', cuestionarioEstado.pregunta?.id, 'view']">{{ cuestionarioEstado.pregunta?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="becare3App.cuestionarioEstado.user">User</span></dt>
+        <dd>
+          <span>{{ cuestionarioEstado.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cuestionario-estado', cuestionarioEstado.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

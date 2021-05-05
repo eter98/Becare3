@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-adherencia-heading" data-cy="AdherenciaCreateUpdateHeading" jhiTranslate="becare3App.adherencia.home.createOrEditLabel">
+        Create or edit a Adherencia
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.horaToma" for="field_horaToma">Hora Toma</label>
+          <div class="d-flex">
+            <input
+              id="field_horaToma"
+              data-cy="horaToma"
+              type="datetime-local"
+              class="form-control"
+              name="horaToma"
+              formControlName="horaToma"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.respuesta" for="field_respuesta">Respuesta</label>
+          <input type="checkbox" class="form-check" name="respuesta" id="field_respuesta" data-cy="respuesta" formControlName="respuesta" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.valor" for="field_valor">Valor</label>
+          <input type="number" class="form-control" name="valor" id="field_valor" data-cy="valor" formControlName="valor" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.comentario" for="field_comentario">Comentario</label>
+          <input
+            type="text"
+            class="form-control"
+            name="comentario"
+            id="field_comentario"
+            data-cy="comentario"
+            formControlName="comentario"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.medicamento" for="field_medicamento">Medicamento</label>
+          <select class="form-control" id="field_medicamento" data-cy="medicamento" name="medicamento" formControlName="medicamento">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                medicamentoOption.id === editForm.get('medicamento')!.value?.id ? editForm.get('medicamento')!.value : medicamentoOption
+              "
+              *ngFor="let medicamentoOption of medicamentosSharedCollection; trackBy: trackMedicamentoById"
+            >
+              {{ medicamentoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.adherencia.paciente" for="field_paciente">Paciente</label>
+          <select class="form-control" id="field_paciente" data-cy="paciente" name="paciente" formControlName="paciente">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="pacienteOption.id === editForm.get('paciente')!.value?.id ? editForm.get('paciente')!.value : pacienteOption"
+              *ngFor="let pacienteOption of pacientesSharedCollection; trackBy: trackPacienteById"
+            >
+              {{ pacienteOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

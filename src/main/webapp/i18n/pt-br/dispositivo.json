@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "dispositivo": {
+      "home": {
+        "title": "Dispositivos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Dispositivo",
+        "createOrEditLabel": "Criar ou editar Dispositivo",
+        "notFound": "Nenhum Dispositivo encontrado"
+      },
+      "created": "Um novo Dispositivo foi criado com o identificador {{ param }}",
+      "updated": "Um Dispositivo foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Dispositivo foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Dispositivo {{ id }}?"
+      },
+      "detail": {
+        "title": "Dispositivo"
+      },
+      "id": "ID",
+      "dispositivo": "Dispositivo",
+      "mac": "Mac",
+      "conectado": "Conectado",
+      "user": "User"
+    }
+  }
+}

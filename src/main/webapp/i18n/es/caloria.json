@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "caloria": {
+      "home": {
+        "title": "Calorias",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Caloria",
+        "createOrEditLabel": "Crear o editar Caloria",
+        "notFound": "Ningún Calorias encontrado"
+      },
+      "created": "Un nuevo Caloria ha sido creado con el identificador {{ param }}",
+      "updated": "Un Caloria ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Caloria ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Caloria {{ id }}?"
+      },
+      "detail": {
+        "title": "Caloria"
+      },
+      "id": "ID",
+      "caloriasActivas": "Calorias Activas",
+      "descripcion": "Descripcion",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

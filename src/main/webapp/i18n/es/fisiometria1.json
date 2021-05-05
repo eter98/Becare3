@@ -1,0 +1,32 @@
+{
+  "becare3App": {
+    "fisiometria1": {
+      "home": {
+        "title": "Fisiometria 1 S",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Fisiometria 1",
+        "createOrEditLabel": "Crear o editar Fisiometria 1",
+        "notFound": "Ningún Fisiometria 1 S encontrado"
+      },
+      "created": "Un nuevo Fisiometria 1 ha sido creado con el identificador {{ param }}",
+      "updated": "Un Fisiometria 1 ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Fisiometria 1 ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Fisiometria 1 {{ id }}?"
+      },
+      "detail": {
+        "title": "Fisiometria 1"
+      },
+      "id": "ID",
+      "ritmoCardiaco": "Ritmo Cardiaco",
+      "ritmoRespiratorio": "Ritmo Respiratorio",
+      "oximetria": "Oximetria",
+      "presionArterialSistolica": "Presion Arterial Sistolica",
+      "presionArterialDiastolica": "Presion Arterial Diastolica",
+      "temperatura": "Temperatura",
+      "fechaRegistro": "Fecha Registro",
+      "fechaToma": "Fecha Toma",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-notificacion-heading"
+        data-cy="NotificacionCreateUpdateHeading"
+        jhiTranslate="becare3App.notificacion.home.createOrEditLabel"
+      >
+        Create or edit a Notificacion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.notificacion.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaInicio"
+              data-cy="fechaInicio"
+              type="datetime-local"
+              class="form-control"
+              name="fechaInicio"
+              formControlName="fechaInicio"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.notificacion.fechaActualizacion" for="field_fechaActualizacion"
+            >Fecha Actualizacion</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_fechaActualizacion"
+              data-cy="fechaActualizacion"
+              type="datetime-local"
+              class="form-control"
+              name="fechaActualizacion"
+              formControlName="fechaActualizacion"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.notificacion.estado" for="field_estado">Estado</label>
+          <input type="number" class="form-control" name="estado" id="field_estado" data-cy="estado" formControlName="estado" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.notificacion.tipoNotificacion" for="field_tipoNotificacion"
+            >Tipo Notificacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="tipoNotificacion"
+            id="field_tipoNotificacion"
+            data-cy="tipoNotificacion"
+            formControlName="tipoNotificacion"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.notificacion.token" for="field_token">Token</label>
+          <select class="form-control" id="field_token" data-cy="token" name="token" formControlName="token">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="tokenDispOption.id === editForm.get('token')!.value?.id ? editForm.get('token')!.value : tokenDispOption"
+              *ngFor="let tokenDispOption of tokenDispsSharedCollection; trackBy: trackTokenDispById"
+            >
+              {{ tokenDispOption.tokenConexion }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Paciente.
+    -->
+    <changeSet id="20210505145547-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="condicion_id"
+                                 baseTableName="paciente"
+                                 constraintName="fk_paciente__condicion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="condicion"/>
+
+        <addForeignKeyConstraint baseColumnNames="ips_id"
+                                 baseTableName="paciente"
+                                 constraintName="fk_paciente__ips_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ips"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="paciente"
+                                 constraintName="fk_paciente__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="tratamiento_id"
+                                 baseTableName="paciente"
+                                 constraintName="fk_paciente__tratamiento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tratamieto"/>
+
+        <addForeignKeyConstraint baseColumnNames="farmaceutica_id"
+                                 baseTableName="paciente"
+                                 constraintName="fk_paciente__farmaceutica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="farmaceutica"/>
+    </changeSet>
+</databaseChangeLog>

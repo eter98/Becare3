@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "iPS": {
+      "home": {
+        "title": "IPS",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo IPS",
+        "createOrEditLabel": "Criar ou editar IPS",
+        "notFound": "Nenhum IPS encontrado"
+      },
+      "created": "Um novo IPS foi criado com o identificador {{ param }}",
+      "updated": "Um IPS foi atualizado com o identificador {{ param }}",
+      "deleted": "Um IPS foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir IPS {{ id }}?"
+      },
+      "detail": {
+        "title": "IPS"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "nit": "Nit",
+      "direccion": "Direccion",
+      "telefono": "Telefono",
+      "correoElectronico": "Correo Electronico"
+    }
+  }
+}

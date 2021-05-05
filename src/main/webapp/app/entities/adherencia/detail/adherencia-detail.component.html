@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="adherencia">
+      <h2 data-cy="adherenciaDetailsHeading"><span jhiTranslate="becare3App.adherencia.detail.title">Adherencia</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ adherencia.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.horaToma">Hora Toma</span></dt>
+        <dd>
+          <span>{{ adherencia.horaToma | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.respuesta">Respuesta</span></dt>
+        <dd>
+          <span>{{ adherencia.respuesta }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.valor">Valor</span></dt>
+        <dd>
+          <span>{{ adherencia.valor }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.comentario">Comentario</span></dt>
+        <dd>
+          <span>{{ adherencia.comentario }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.medicamento">Medicamento</span></dt>
+        <dd>
+          <div *ngIf="adherencia.medicamento">
+            <a [routerLink]="['/medicamento', adherencia.medicamento?.id, 'view']">{{ adherencia.medicamento?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="becare3App.adherencia.paciente">Paciente</span></dt>
+        <dd>
+          <div *ngIf="adherencia.paciente">
+            <a [routerLink]="['/paciente', adherencia.paciente?.id, 'view']">{{ adherencia.paciente?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/adherencia', adherencia.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

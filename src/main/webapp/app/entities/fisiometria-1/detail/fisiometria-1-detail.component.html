@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fisiometria1">
+      <h2 data-cy="fisiometria1DetailsHeading"><span jhiTranslate="becare3App.fisiometria1.detail.title">Fisiometria 1</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ fisiometria1.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.ritmoCardiaco">Ritmo Cardiaco</span></dt>
+        <dd>
+          <span>{{ fisiometria1.ritmoCardiaco }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.ritmoRespiratorio">Ritmo Respiratorio</span></dt>
+        <dd>
+          <span>{{ fisiometria1.ritmoRespiratorio }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.oximetria">Oximetria</span></dt>
+        <dd>
+          <span>{{ fisiometria1.oximetria }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.presionArterialSistolica">Presion Arterial Sistolica</span></dt>
+        <dd>
+          <span>{{ fisiometria1.presionArterialSistolica }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.presionArterialDiastolica">Presion Arterial Diastolica</span></dt>
+        <dd>
+          <span>{{ fisiometria1.presionArterialDiastolica }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.temperatura">Temperatura</span></dt>
+        <dd>
+          <span>{{ fisiometria1.temperatura }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.fechaRegistro">Fecha Registro</span></dt>
+        <dd>
+          <span>{{ fisiometria1.fechaRegistro | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.fechaToma">Fecha Toma</span></dt>
+        <dd>
+          <span>{{ fisiometria1.fechaToma | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.fisiometria1.user">User</span></dt>
+        <dd>
+          <span>{{ fisiometria1.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fisiometria-1', fisiometria1.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

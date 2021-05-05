@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "tokenDisp": {
+      "home": {
+        "title": "Token Disps",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Token Disp",
+        "createOrEditLabel": "Crear o editar Token Disp",
+        "notFound": "Ningún Token Disps encontrado"
+      },
+      "created": "Un nuevo Token Disp ha sido creado con el identificador {{ param }}",
+      "updated": "Un Token Disp ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Token Disp ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Token Disp {{ id }}?"
+      },
+      "detail": {
+        "title": "Token Disp"
+      },
+      "id": "ID",
+      "tokenConexion": "Token Conexion",
+      "activo": "Activo",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin",
+      "user": "User"
+    }
+  }
+}

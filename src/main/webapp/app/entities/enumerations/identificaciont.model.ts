@@ -1,0 +1,13 @@
+export enum Identificaciont {
+  CEDULA = 'CEDULA',
+
+  TARJETA = 'TARJETA',
+
+  IDENTIDAD = 'IDENTIDAD',
+
+  CEDULA_EXTRANJERIA = 'CEDULA_EXTRANJERIA',
+
+  PASAPORTE = 'PASAPORTE',
+
+  OTRO = 'OTRO',
+}

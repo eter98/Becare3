@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="medicamento">
+      <h2 data-cy="medicamentoDetailsHeading"><span jhiTranslate="becare3App.medicamento.detail.title">Medicamento</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ medicamento.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.medicamento.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ medicamento.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.medicamento.descripcion">Descripcion</span></dt>
+        <dd>
+          <span>{{ medicamento.descripcion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.medicamento.fechaIngreso">Fecha Ingreso</span></dt>
+        <dd>
+          <span>{{ medicamento.fechaIngreso | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.medicamento.presentacion">Presentacion</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'becare3App.Presentacion.' + medicamento.presentacion }}">{{ medicamento.presentacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.medicamento.generico">Generico</span></dt>
+        <dd>
+          <span>{{ medicamento.generico }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/medicamento', medicamento.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="presionSanguinea">
+      <h2 data-cy="presionSanguineaDetailsHeading">
+        <span jhiTranslate="becare3App.presionSanguinea.detail.title">Presion Sanguinea</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ presionSanguinea.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.presionSanguinea.presionSanguineaSistolica">Presion Sanguinea Sistolica</span></dt>
+        <dd>
+          <span>{{ presionSanguinea.presionSanguineaSistolica }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.presionSanguinea.presionSanguineaDiastolica">Presion Sanguinea Diastolica</span></dt>
+        <dd>
+          <span>{{ presionSanguinea.presionSanguineaDiastolica }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.presionSanguinea.fechaRegistro">Fecha Registro</span></dt>
+        <dd>
+          <span>{{ presionSanguinea.fechaRegistro | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.presionSanguinea.user">User</span></dt>
+        <dd>
+          <span>{{ presionSanguinea.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/presion-sanguinea', presionSanguinea.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

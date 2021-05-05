@@ -1,0 +1,32 @@
+{
+  "becare3App": {
+    "encuesta": {
+      "home": {
+        "title": "Encuestas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Encuesta",
+        "createOrEditLabel": "Crear o editar Encuesta",
+        "notFound": "Ningún Encuestas encontrado"
+      },
+      "created": "Un nuevo Encuesta ha sido creado con el identificador {{ param }}",
+      "updated": "Un Encuesta ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Encuesta ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Encuesta {{ id }}?"
+      },
+      "detail": {
+        "title": "Encuesta"
+      },
+      "id": "ID",
+      "fecha": "Fecha",
+      "debilidad": "Debilidad",
+      "cefalea": "Cefalea",
+      "calambres": "Calambres",
+      "nauseas": "Nauseas",
+      "vomito": "Vomito",
+      "mareo": "Mareo",
+      "ninguna": "Ninguna",
+      "user": "User"
+    }
+  }
+}

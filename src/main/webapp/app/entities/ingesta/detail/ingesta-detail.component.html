@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ingesta">
+      <h2 data-cy="ingestaDetailsHeading"><span jhiTranslate="becare3App.ingesta.detail.title">Ingesta</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ingesta.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.ingesta.tipo">Tipo</span></dt>
+        <dd>
+          <span>{{ ingesta.tipo }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.ingesta.consumoCalorias">Consumo Calorias</span></dt>
+        <dd>
+          <span>{{ ingesta.consumoCalorias }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.ingesta.fechaRegistro">Fecha Registro</span></dt>
+        <dd>
+          <span>{{ ingesta.fechaRegistro | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.ingesta.user">User</span></dt>
+        <dd>
+          <span>{{ ingesta.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ingesta', ingesta.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

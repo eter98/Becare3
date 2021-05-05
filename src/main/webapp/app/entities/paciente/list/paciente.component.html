@@ -1,0 +1,175 @@
+<div>
+  <h2 id="page-heading" data-cy="PacienteHeading">
+    <span jhiTranslate="becare3App.paciente.home.title">Pacientes</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="becare3App.paciente.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-paciente"
+        [routerLink]="['/paciente/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="becare3App.paciente.home.createLabel"> Create a new Paciente </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="pacientes?.length === 0">
+    <span jhiTranslate="becare3App.paciente.home.notFound">No pacientes found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="pacientes && pacientes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nombre">
+            <span jhiTranslate="becare3App.paciente.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tipoIdentificacion">
+            <span jhiTranslate="becare3App.paciente.tipoIdentificacion">Tipo Identificacion</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="identificacion">
+            <span jhiTranslate="becare3App.paciente.identificacion">Identificacion</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="edad"><span jhiTranslate="becare3App.paciente.edad">Edad</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sexo"><span jhiTranslate="becare3App.paciente.sexo">Sexo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="pesoKG">
+            <span jhiTranslate="becare3App.paciente.pesoKG">Peso KG</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="estaturaCM">
+            <span jhiTranslate="becare3App.paciente.estaturaCM">Estatura CM</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="oximetriaReferencia">
+            <span jhiTranslate="becare3App.paciente.oximetriaReferencia">Oximetria Referencia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="temperaturaReferencia">
+            <span jhiTranslate="becare3App.paciente.temperaturaReferencia">Temperatura Referencia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ritmoCardiacoReferencia">
+            <span jhiTranslate="becare3App.paciente.ritmoCardiacoReferencia">Ritmo Cardiaco Referencia</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="presionSistolicaReferencia">
+            <span jhiTranslate="becare3App.paciente.presionSistolicaReferencia">Presion Sistolica Referencia</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="presionDistolicaReferencia">
+            <span jhiTranslate="becare3App.paciente.presionDistolicaReferencia">Presion Distolica Referencia</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="comentarios">
+            <span jhiTranslate="becare3App.paciente.comentarios">Comentarios</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="pasosReferencia">
+            <span jhiTranslate="becare3App.paciente.pasosReferencia">Pasos Referencia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="caloriasReferencia">
+            <span jhiTranslate="becare3App.paciente.caloriasReferencia">Calorias Referencia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="metaReferencia">
+            <span jhiTranslate="becare3App.paciente.metaReferencia">Meta Referencia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="condicion.id">
+            <span jhiTranslate="becare3App.paciente.condicion">Condicion</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ips.nombre">
+            <span jhiTranslate="becare3App.paciente.ips">Ips</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="user.id"><span jhiTranslate="becare3App.paciente.user">User</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="tratamiento.id">
+            <span jhiTranslate="becare3App.paciente.tratamiento">Tratamiento</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="farmaceutica.id">
+            <span jhiTranslate="becare3App.paciente.farmaceutica">Farmaceutica</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let paciente of pacientes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/paciente', paciente.id, 'view']">{{ paciente.id }}</a>
+          </td>
+          <td>{{ paciente.nombre }}</td>
+          <td jhiTranslate="{{ 'becare3App.Identificaciont.' + paciente.tipoIdentificacion }}">{{ paciente.tipoIdentificacion }}</td>
+          <td>{{ paciente.identificacion }}</td>
+          <td>{{ paciente.edad }}</td>
+          <td jhiTranslate="{{ 'becare3App.Sexop.' + paciente.sexo }}">{{ paciente.sexo }}</td>
+          <td>{{ paciente.pesoKG }}</td>
+          <td>{{ paciente.estaturaCM }}</td>
+          <td>{{ paciente.oximetriaReferencia }}</td>
+          <td>{{ paciente.temperaturaReferencia }}</td>
+          <td>{{ paciente.ritmoCardiacoReferencia }}</td>
+          <td>{{ paciente.presionSistolicaReferencia }}</td>
+          <td>{{ paciente.presionDistolicaReferencia }}</td>
+          <td>{{ paciente.comentarios }}</td>
+          <td>{{ paciente.pasosReferencia }}</td>
+          <td>{{ paciente.caloriasReferencia }}</td>
+          <td>{{ paciente.metaReferencia }}</td>
+          <td>
+            <div *ngIf="paciente.condicion">
+              <a [routerLink]="['/condicion', paciente.condicion?.id, 'view']">{{ paciente.condicion?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="paciente.ips">
+              <a [routerLink]="['/ips', paciente.ips?.id, 'view']">{{ paciente.ips?.nombre }}</a>
+            </div>
+          </td>
+          <td>
+            {{ paciente.user?.id }}
+          </td>
+          <td>
+            <div *ngIf="paciente.tratamiento">
+              <a [routerLink]="['/tratamieto', paciente.tratamiento?.id, 'view']">{{ paciente.tratamiento?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="paciente.farmaceutica">
+              <a [routerLink]="['/farmaceutica', paciente.farmaceutica?.id, 'view']">{{ paciente.farmaceutica?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/paciente', paciente.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/paciente', paciente.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(paciente)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+{
+  "name": "Encuesta",
+  "fields": [
+    {
+      "fieldName": "fecha",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "debilidad",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cefalea",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "calambres",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "nauseas",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "vomito",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "mareo",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "ninguna",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "encuesta",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "encuesta",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145538"
+}

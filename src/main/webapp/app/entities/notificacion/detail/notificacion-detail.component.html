@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="notificacion">
+      <h2 data-cy="notificacionDetailsHeading"><span jhiTranslate="becare3App.notificacion.detail.title">Notificacion</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ notificacion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.notificacion.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ notificacion.fechaInicio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.notificacion.fechaActualizacion">Fecha Actualizacion</span></dt>
+        <dd>
+          <span>{{ notificacion.fechaActualizacion | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.notificacion.estado">Estado</span></dt>
+        <dd>
+          <span>{{ notificacion.estado }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.notificacion.tipoNotificacion">Tipo Notificacion</span></dt>
+        <dd>
+          <span>{{ notificacion.tipoNotificacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.notificacion.token">Token</span></dt>
+        <dd>
+          <div *ngIf="notificacion.token">
+            <a [routerLink]="['/token-disp', notificacion.token?.id, 'view']">{{ notificacion.token?.tokenConexion }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/notificacion', notificacion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "sueno": {
+      "home": {
+        "title": "Suenos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sueno",
+        "createOrEditLabel": "Create or edit a Sueno",
+        "notFound": "No Suenos found"
+      },
+      "created": "A new Sueno is created with identifier {{ param }}",
+      "updated": "A Sueno is updated with identifier {{ param }}",
+      "deleted": "A Sueno is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sueno {{ id }}?"
+      },
+      "detail": {
+        "title": "Sueno"
+      },
+      "id": "ID",
+      "superficial": "Superficial",
+      "profundo": "Profundo",
+      "despierto": "Despierto",
+      "timeInstant": "Time Instant",
+      "user": "User"
+    }
+  }
+}
