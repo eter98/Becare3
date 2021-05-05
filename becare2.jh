@@ -1,0 +1,229 @@
+
+/*
+ * This is a microservice blog sample with Gateway and two microservice applications
+ * This uses JHipster registry for service discovery and OIDC authentication
+ */
+entity Adherencia {
+  horaToma Instant,
+  respuesta Boolean,
+  valor Integer,
+  comentario String
+}
+entity Agenda {
+  horaMedicamento Integer
+}
+entity Alarma {
+  timeInstant Instant,
+  descripcion String,
+  procedimiento String,
+  titulo String,
+  verificar Boolean,
+  observaciones String,
+  prioridad String
+}
+entity Caloria {
+  caloriasActivas Integer,
+  descripcion String,
+  fechaRegistro Instant
+}
+entity Condicion {
+  condicion String,
+  descripcion TextBlob
+}
+entity CuestionarioEstado {
+  valor Integer,
+  valoracion String
+}
+entity Dispositivo {
+  dispositivo String,
+  mac String,
+  conectado Boolean
+}
+entity Encuesta {
+  fecha Instant,
+  debilidad Boolean,
+  cefalea Boolean,
+  calambres Boolean,
+  nauseas Boolean,
+  vomito Boolean,
+  mareo Boolean,
+  ninguna Boolean
+}
+entity Farmaceutica {
+  nombre String,
+  direccion String,
+  propietario String
+}
+entity Fisiometria1 {
+  ritmoCardiaco Integer,
+  ritmoRespiratorio Integer,
+  oximetria Integer,
+  presionArterialSistolica Integer,
+  presionArterialDiastolica Integer,
+  temperatura Float,
+  fechaRegistro Instant,
+  fechaToma Instant
+}
+entity FrecuenciaCardiaca {
+  frecuenciaCardiaca Integer,
+  fechaRegistro Instant
+}
+entity Ingesta {
+  tipo String,
+  consumoCalorias Integer,
+  fechaRegistro Instant
+}
+entity IPS {
+  nombre String,
+  nit String,
+  direccion String,
+  telefono String,
+  correoElectronico String
+}
+entity Medicamento {
+  nombre String,
+  descripcion TextBlob,
+  fechaIngreso Instant,
+  presentacion Presentacion,
+  generico TextBlob
+}
+entity Notificacion {
+  fechaInicio Instant,
+  fechaActualizacion ZonedDateTime,
+  estado Integer,
+  tipoNotificacion Integer
+}
+entity Oximetria {
+  oximetria Integer,
+  fechaRegistro Instant
+}
+entity Paciente {
+  nombre String,
+  tipoIdentificacion Identificaciont,
+  identificacion Integer,
+  edad Integer,
+  sexo Sexop,
+  pesoKG Float,
+  estaturaCM Integer,
+  oximetriaReferencia Integer,
+  temperaturaReferencia Float,
+  ritmoCardiacoReferencia Integer,
+  presionSistolicaReferencia Integer,
+  presionDistolicaReferencia Integer,
+  comentarios TextBlob,
+  pasosReferencia Integer,
+  caloriasReferencia Integer,
+  metaReferencia String
+}
+entity Pasos {
+  nroPasos Integer,
+  timeInstant Instant
+}
+entity Peso {
+  pesoKG Integer,
+  descripcion String,
+  fechaRegistro Instant
+}
+entity Pregunta {
+  pregunta String
+}
+entity PresionSanguinea {
+  presionSanguineaSistolica Integer,
+  presionSanguineaDiastolica Integer,
+  fechaRegistro Instant
+}
+entity Programa {
+  caloriasActividad Integer,
+  pasosActividad Integer,
+  fechaRegistro Instant
+}
+entity Sueno {
+  superficial Integer,
+  profundo Integer,
+  despierto Integer,
+  timeInstant Instant
+}
+entity Temperatura {
+  temperatura Float,
+  fechaRegistro Instant
+}
+entity TokenDisp {
+  tokenConexion String,
+  activo Boolean,
+  fechaInicio Instant,
+  fechaFin ZonedDateTime
+}
+entity TratamientoMedicamento {
+  dosis String,
+  intensidad String
+}
+entity Tratamieto {
+  descripcionTratamiento TextBlob,
+  fechaInicio Instant,
+  fechaFin ZonedDateTime
+}
+enum Presentacion {
+  Comprimido,
+  Gragea,
+  Capsula,
+  Polvo,
+  Pildora,
+  Unguento,
+  Pomada,
+  Crema,
+  Pasta,
+  Solucion,
+  Jarabe,
+  Suspension,
+  Emulsion,
+  Locion
+}
+enum Identificaciont {
+  CEDULA,
+  TARJETA,
+  IDENTIDAD,
+  CEDULA_EXTRANJERIA,
+  PASAPORTE,
+  OTRO
+}
+enum Sexop {
+  FEMENINO,
+  MASCULINO,
+  OTRO
+}
+
+relationship ManyToOne {
+  Adherencia{medicamento} to Medicamento,
+  Adherencia{paciente} to Paciente,
+  Agenda{medicamento} to Medicamento,
+  Alarma{user} to User,
+  Caloria{user} to User,
+  CuestionarioEstado{pregunta} to Pregunta,
+  CuestionarioEstado{user} to User,
+  Dispositivo{user} to User,
+  Encuesta{user} to User,
+  Fisiometria1{user} to User,
+  FrecuenciaCardiaca{user} to User,
+  Ingesta{user} to User,
+  Notificacion{token(tokenConexion)} to TokenDisp,
+  Oximetria{user} to User,
+  Paciente{condicion} to Condicion,
+  Paciente{ips(nombre)} to IPS,
+  Paciente{user} to User,
+  Paciente{tratamiento} to Tratamieto,
+  Paciente{farmaceutica} to Farmaceutica,
+  Pasos{user} to User,
+  Peso{user} to User,
+  Pregunta{condicion} to Condicion,
+  PresionSanguinea{user} to User,
+  Programa{user} to User,
+  Sueno{user} to User,
+  Temperatura{user} to User,
+  TokenDisp{user} to User,
+  TratamientoMedicamento{tratamieto} to Tratamieto,
+  TratamientoMedicamento{medicamento} to Medicamento
+}
+
+paginate Adherencia, Agenda, Alarma, Caloria, Condicion, CuestionarioEstado, Dispositivo, Encuesta, Farmaceutica, Fisiometria1, FrecuenciaCardiaca, Ingesta, IPS, Medicamento, Notificacion, Oximetria, Paciente, Pasos, Peso, Pregunta, PresionSanguinea, Programa, Sueno, Temperatura, TokenDisp, TratamientoMedicamento, Tratamieto with infinite-scroll
+service Adherencia, Agenda, Alarma, Caloria, Condicion, CuestionarioEstado, Dispositivo, Encuesta, Farmaceutica, Fisiometria1, FrecuenciaCardiaca, Ingesta, IPS, Medicamento, Notificacion, Oximetria, Paciente, Pasos, Peso, Pregunta, PresionSanguinea, Programa, Sueno, Temperatura, TokenDisp, TratamientoMedicamento, Tratamieto with serviceImpl
+filter Adherencia, Agenda, Alarma, Caloria, Condicion, CuestionarioEstado, Dispositivo, Encuesta, Farmaceutica, Fisiometria1, FrecuenciaCardiaca, Ingesta, IPS, Medicamento, Notificacion, Oximetria, Paciente, Pasos, Peso, Pregunta, PresionSanguinea, Programa, Sueno, Temperatura, TokenDisp, TratamientoMedicamento, Tratamieto
