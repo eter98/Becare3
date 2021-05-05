@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-tratamiento-medicamento-heading"
+        data-cy="TratamientoMedicamentoCreateUpdateHeading"
+        jhiTranslate="becare3App.tratamientoMedicamento.home.createOrEditLabel"
+      >
+        Create or edit a Tratamiento Medicamento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.tratamientoMedicamento.dosis" for="field_dosis">Dosis</label>
+          <input type="text" class="form-control" name="dosis" id="field_dosis" data-cy="dosis" formControlName="dosis" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.tratamientoMedicamento.intensidad" for="field_intensidad"
+            >Intensidad</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="intensidad"
+            id="field_intensidad"
+            data-cy="intensidad"
+            formControlName="intensidad"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.tratamientoMedicamento.tratamieto" for="field_tratamieto"
+            >Tratamieto</label
+          >
+          <select class="form-control" id="field_tratamieto" data-cy="tratamieto" name="tratamieto" formControlName="tratamieto">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                tratamietoOption.id === editForm.get('tratamieto')!.value?.id ? editForm.get('tratamieto')!.value : tratamietoOption
+              "
+              *ngFor="let tratamietoOption of tratamietosSharedCollection; trackBy: trackTratamietoById"
+            >
+              {{ tratamietoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.tratamientoMedicamento.medicamento" for="field_medicamento"
+            >Medicamento</label
+          >
+          <select class="form-control" id="field_medicamento" data-cy="medicamento" name="medicamento" formControlName="medicamento">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                medicamentoOption.id === editForm.get('medicamento')!.value?.id ? editForm.get('medicamento')!.value : medicamentoOption
+              "
+              *ngFor="let medicamentoOption of medicamentosSharedCollection; trackBy: trackMedicamentoById"
+            >
+              {{ medicamentoOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

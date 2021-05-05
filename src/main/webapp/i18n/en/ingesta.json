@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "ingesta": {
+      "home": {
+        "title": "Ingestas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ingesta",
+        "createOrEditLabel": "Create or edit a Ingesta",
+        "notFound": "No Ingestas found"
+      },
+      "created": "A new Ingesta is created with identifier {{ param }}",
+      "updated": "A Ingesta is updated with identifier {{ param }}",
+      "deleted": "A Ingesta is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ingesta {{ id }}?"
+      },
+      "detail": {
+        "title": "Ingesta"
+      },
+      "id": "ID",
+      "tipo": "Tipo",
+      "consumoCalorias": "Consumo Calorias",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

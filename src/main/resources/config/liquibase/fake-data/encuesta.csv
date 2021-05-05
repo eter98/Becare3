@@ -1,0 +1,11 @@
+id;fecha;debilidad;cefalea;calambres;nauseas;vomito;mareo;ninguna
+1;2021-05-04T16:12:08;true;false;false;true;false;true;true
+2;2021-05-05T00:05:30;false;true;true;true;false;false;true
+3;2021-05-05T10:48:29;false;false;false;false;true;false;false
+4;2021-05-04T15:50:57;true;false;false;true;true;true;false
+5;2021-05-05T05:19:30;true;true;true;true;true;true;false
+6;2021-05-05T04:09:38;true;false;false;true;false;true;true
+7;2021-05-05T06:24:06;true;true;true;false;true;false;false
+8;2021-05-05T01:11:48;true;false;true;true;false;true;false
+9;2021-05-04T15:32:49;false;true;false;true;false;false;true
+10;2021-05-04T23:23:42;false;true;false;true;false;true;false

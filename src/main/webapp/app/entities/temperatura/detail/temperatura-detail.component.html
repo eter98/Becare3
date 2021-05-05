@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="temperatura">
+      <h2 data-cy="temperaturaDetailsHeading"><span jhiTranslate="becare3App.temperatura.detail.title">Temperatura</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ temperatura.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.temperatura.temperatura">Temperatura</span></dt>
+        <dd>
+          <span>{{ temperatura.temperatura }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.temperatura.fechaRegistro">Fecha Registro</span></dt>
+        <dd>
+          <span>{{ temperatura.fechaRegistro | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.temperatura.user">User</span></dt>
+        <dd>
+          <span>{{ temperatura.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/temperatura', temperatura.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

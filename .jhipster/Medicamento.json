@@ -1,0 +1,39 @@
+{
+  "name": "Medicamento",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "fechaIngreso",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "presentacion",
+      "fieldType": "Presentacion",
+      "fieldValues": "Comprimido,Gragea,Capsula,Polvo,Pildora,Unguento,Pomada,Crema,Pasta,Solucion,Jarabe,Suspension,Emulsion,Locion"
+    },
+    {
+      "fieldName": "generico",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "medicamento",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145544"
+}

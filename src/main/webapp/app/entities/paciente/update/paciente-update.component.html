@@ -1,0 +1,304 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-paciente-heading" data-cy="PacienteCreateUpdateHeading" jhiTranslate="becare3App.paciente.home.createOrEditLabel">
+        Create or edit a Paciente
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.nombre" for="field_nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="field_nombre" data-cy="nombre" formControlName="nombre" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.tipoIdentificacion" for="field_tipoIdentificacion"
+            >Tipo Identificacion</label
+          >
+          <select
+            class="form-control"
+            name="tipoIdentificacion"
+            formControlName="tipoIdentificacion"
+            id="field_tipoIdentificacion"
+            data-cy="tipoIdentificacion"
+          >
+            <option [ngValue]="null">{{ 'becare3App.Identificaciont.null' | translate }}</option>
+            <option value="CEDULA">{{ 'becare3App.Identificaciont.CEDULA' | translate }}</option>
+            <option value="TARJETA">{{ 'becare3App.Identificaciont.TARJETA' | translate }}</option>
+            <option value="IDENTIDAD">{{ 'becare3App.Identificaciont.IDENTIDAD' | translate }}</option>
+            <option value="CEDULA_EXTRANJERIA">{{ 'becare3App.Identificaciont.CEDULA_EXTRANJERIA' | translate }}</option>
+            <option value="PASAPORTE">{{ 'becare3App.Identificaciont.PASAPORTE' | translate }}</option>
+            <option value="OTRO">{{ 'becare3App.Identificaciont.OTRO' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.identificacion" for="field_identificacion"
+            >Identificacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="identificacion"
+            id="field_identificacion"
+            data-cy="identificacion"
+            formControlName="identificacion"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.edad" for="field_edad">Edad</label>
+          <input type="number" class="form-control" name="edad" id="field_edad" data-cy="edad" formControlName="edad" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.sexo" for="field_sexo">Sexo</label>
+          <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo" data-cy="sexo">
+            <option [ngValue]="null">{{ 'becare3App.Sexop.null' | translate }}</option>
+            <option value="FEMENINO">{{ 'becare3App.Sexop.FEMENINO' | translate }}</option>
+            <option value="MASCULINO">{{ 'becare3App.Sexop.MASCULINO' | translate }}</option>
+            <option value="OTRO">{{ 'becare3App.Sexop.OTRO' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.pesoKG" for="field_pesoKG">Peso KG</label>
+          <input type="number" class="form-control" name="pesoKG" id="field_pesoKG" data-cy="pesoKG" formControlName="pesoKG" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.estaturaCM" for="field_estaturaCM">Estatura CM</label>
+          <input
+            type="number"
+            class="form-control"
+            name="estaturaCM"
+            id="field_estaturaCM"
+            data-cy="estaturaCM"
+            formControlName="estaturaCM"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.oximetriaReferencia" for="field_oximetriaReferencia"
+            >Oximetria Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="oximetriaReferencia"
+            id="field_oximetriaReferencia"
+            data-cy="oximetriaReferencia"
+            formControlName="oximetriaReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.temperaturaReferencia" for="field_temperaturaReferencia"
+            >Temperatura Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="temperaturaReferencia"
+            id="field_temperaturaReferencia"
+            data-cy="temperaturaReferencia"
+            formControlName="temperaturaReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.ritmoCardiacoReferencia" for="field_ritmoCardiacoReferencia"
+            >Ritmo Cardiaco Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="ritmoCardiacoReferencia"
+            id="field_ritmoCardiacoReferencia"
+            data-cy="ritmoCardiacoReferencia"
+            formControlName="ritmoCardiacoReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="becare3App.paciente.presionSistolicaReferencia"
+            for="field_presionSistolicaReferencia"
+            >Presion Sistolica Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="presionSistolicaReferencia"
+            id="field_presionSistolicaReferencia"
+            data-cy="presionSistolicaReferencia"
+            formControlName="presionSistolicaReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="becare3App.paciente.presionDistolicaReferencia"
+            for="field_presionDistolicaReferencia"
+            >Presion Distolica Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="presionDistolicaReferencia"
+            id="field_presionDistolicaReferencia"
+            data-cy="presionDistolicaReferencia"
+            formControlName="presionDistolicaReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.comentarios" for="field_comentarios">Comentarios</label>
+          <textarea
+            class="form-control"
+            name="comentarios"
+            id="field_comentarios"
+            data-cy="comentarios"
+            formControlName="comentarios"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.pasosReferencia" for="field_pasosReferencia"
+            >Pasos Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="pasosReferencia"
+            id="field_pasosReferencia"
+            data-cy="pasosReferencia"
+            formControlName="pasosReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.caloriasReferencia" for="field_caloriasReferencia"
+            >Calorias Referencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="caloriasReferencia"
+            id="field_caloriasReferencia"
+            data-cy="caloriasReferencia"
+            formControlName="caloriasReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.metaReferencia" for="field_metaReferencia"
+            >Meta Referencia</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="metaReferencia"
+            id="field_metaReferencia"
+            data-cy="metaReferencia"
+            formControlName="metaReferencia"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.condicion" for="field_condicion">Condicion</label>
+          <select class="form-control" id="field_condicion" data-cy="condicion" name="condicion" formControlName="condicion">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="condicionOption.id === editForm.get('condicion')!.value?.id ? editForm.get('condicion')!.value : condicionOption"
+              *ngFor="let condicionOption of condicionsSharedCollection; trackBy: trackCondicionById"
+            >
+              {{ condicionOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.ips" for="field_ips">Ips</label>
+          <select class="form-control" id="field_ips" data-cy="ips" name="ips" formControlName="ips">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="iPSOption.id === editForm.get('ips')!.value?.id ? editForm.get('ips')!.value : iPSOption"
+              *ngFor="let iPSOption of iPSSharedCollection; trackBy: trackIPSById"
+            >
+              {{ iPSOption.nombre }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.tratamiento" for="field_tratamiento">Tratamiento</label>
+          <select class="form-control" id="field_tratamiento" data-cy="tratamiento" name="tratamiento" formControlName="tratamiento">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                tratamietoOption.id === editForm.get('tratamiento')!.value?.id ? editForm.get('tratamiento')!.value : tratamietoOption
+              "
+              *ngFor="let tratamietoOption of tratamietosSharedCollection; trackBy: trackTratamietoById"
+            >
+              {{ tratamietoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.paciente.farmaceutica" for="field_farmaceutica">Farmaceutica</label>
+          <select class="form-control" id="field_farmaceutica" data-cy="farmaceutica" name="farmaceutica" formControlName="farmaceutica">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                farmaceuticaOption.id === editForm.get('farmaceutica')!.value?.id ? editForm.get('farmaceutica')!.value : farmaceuticaOption
+              "
+              *ngFor="let farmaceuticaOption of farmaceuticasSharedCollection; trackBy: trackFarmaceuticaById"
+            >
+              {{ farmaceuticaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

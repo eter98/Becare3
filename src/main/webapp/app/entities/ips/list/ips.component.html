@@ -1,0 +1,82 @@
+<div>
+  <h2 id="page-heading" data-cy="IPSHeading">
+    <span jhiTranslate="becare3App.iPS.home.title">IPS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="becare3App.iPS.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ips"
+        [routerLink]="['/ips/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="becare3App.iPS.home.createLabel"> Create a new IPS </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="iPS?.length === 0">
+    <span jhiTranslate="becare3App.iPS.home.notFound">No iPS found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="iPS && iPS.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nombre"><span jhiTranslate="becare3App.iPS.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nit"><span jhiTranslate="becare3App.iPS.nit">Nit</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="direccion">
+            <span jhiTranslate="becare3App.iPS.direccion">Direccion</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="telefono">
+            <span jhiTranslate="becare3App.iPS.telefono">Telefono</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="correoElectronico">
+            <span jhiTranslate="becare3App.iPS.correoElectronico">Correo Electronico</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let iPS of iPS; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ips', iPS.id, 'view']">{{ iPS.id }}</a>
+          </td>
+          <td>{{ iPS.nombre }}</td>
+          <td>{{ iPS.nit }}</td>
+          <td>{{ iPS.direccion }}</td>
+          <td>{{ iPS.telefono }}</td>
+          <td>{{ iPS.correoElectronico }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/ips', iPS.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/ips', iPS.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(iPS)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

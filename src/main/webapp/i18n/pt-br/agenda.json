@@ -1,0 +1,25 @@
+{
+  "becare3App": {
+    "agenda": {
+      "home": {
+        "title": "Agenda",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Agenda",
+        "createOrEditLabel": "Criar ou editar Agenda",
+        "notFound": "Nenhum Agenda encontrado"
+      },
+      "created": "Um novo Agenda foi criado com o identificador {{ param }}",
+      "updated": "Um Agenda foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Agenda foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Agenda {{ id }}?"
+      },
+      "detail": {
+        "title": "Agenda"
+      },
+      "id": "ID",
+      "horaMedicamento": "Hora Medicamento",
+      "medicamento": "Medicamento"
+    }
+  }
+}

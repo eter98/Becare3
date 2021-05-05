@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="peso">
+      <h2 data-cy="pesoDetailsHeading"><span jhiTranslate="becare3App.peso.detail.title">Peso</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ peso.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.peso.pesoKG">Peso KG</span></dt>
+        <dd>
+          <span>{{ peso.pesoKG }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.peso.descripcion">Descripcion</span></dt>
+        <dd>
+          <span>{{ peso.descripcion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.peso.fechaRegistro">Fecha Registro</span></dt>
+        <dd>
+          <span>{{ peso.fechaRegistro | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.peso.user">User</span></dt>
+        <dd>
+          <span>{{ peso.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/peso', peso.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

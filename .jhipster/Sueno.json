@@ -1,0 +1,39 @@
+{
+  "name": "Sueno",
+  "fields": [
+    {
+      "fieldName": "superficial",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "profundo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "despierto",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "timeInstant",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "sueno",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "sueno",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145553"
+}

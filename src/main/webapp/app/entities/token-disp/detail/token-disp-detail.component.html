@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tokenDisp">
+      <h2 data-cy="tokenDispDetailsHeading"><span jhiTranslate="becare3App.tokenDisp.detail.title">Token Disp</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ tokenDisp.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.tokenDisp.tokenConexion">Token Conexion</span></dt>
+        <dd>
+          <span>{{ tokenDisp.tokenConexion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.tokenDisp.activo">Activo</span></dt>
+        <dd>
+          <span>{{ tokenDisp.activo }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.tokenDisp.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ tokenDisp.fechaInicio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.tokenDisp.fechaFin">Fecha Fin</span></dt>
+        <dd>
+          <span>{{ tokenDisp.fechaFin | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.tokenDisp.user">User</span></dt>
+        <dd>
+          <span>{{ tokenDisp.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/token-disp', tokenDisp.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

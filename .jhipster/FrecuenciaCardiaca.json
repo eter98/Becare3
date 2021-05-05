@@ -1,0 +1,31 @@
+{
+  "name": "FrecuenciaCardiaca",
+  "fields": [
+    {
+      "fieldName": "frecuenciaCardiaca",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fechaRegistro",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "frecuenciaCardiaca",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "frecuencia_cardiaca",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145541"
+}

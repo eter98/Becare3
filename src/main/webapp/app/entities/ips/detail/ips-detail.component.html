@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="iPS">
+      <h2 data-cy="iPSDetailsHeading"><span jhiTranslate="becare3App.iPS.detail.title">IPS</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ iPS.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.iPS.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ iPS.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.iPS.nit">Nit</span></dt>
+        <dd>
+          <span>{{ iPS.nit }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.iPS.direccion">Direccion</span></dt>
+        <dd>
+          <span>{{ iPS.direccion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.iPS.telefono">Telefono</span></dt>
+        <dd>
+          <span>{{ iPS.telefono }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.iPS.correoElectronico">Correo Electronico</span></dt>
+        <dd>
+          <span>{{ iPS.correoElectronico }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ips', iPS.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

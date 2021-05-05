@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "cuestionarioEstado": {
+      "home": {
+        "title": "Cuestionario Estados",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Cuestionario Estado",
+        "createOrEditLabel": "Crear o editar Cuestionario Estado",
+        "notFound": "Ningún Cuestionario Estados encontrado"
+      },
+      "created": "Un nuevo Cuestionario Estado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cuestionario Estado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cuestionario Estado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Cuestionario Estado {{ id }}?"
+      },
+      "detail": {
+        "title": "Cuestionario Estado"
+      },
+      "id": "ID",
+      "valor": "Valor",
+      "valoracion": "Valoracion",
+      "pregunta": "Pregunta",
+      "user": "User"
+    }
+  }
+}

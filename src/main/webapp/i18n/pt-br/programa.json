@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "programa": {
+      "home": {
+        "title": "Programas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Programa",
+        "createOrEditLabel": "Criar ou editar Programa",
+        "notFound": "Nenhum Programa encontrado"
+      },
+      "created": "Um novo Programa foi criado com o identificador {{ param }}",
+      "updated": "Um Programa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Programa foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Programa {{ id }}?"
+      },
+      "detail": {
+        "title": "Programa"
+      },
+      "id": "ID",
+      "caloriasActividad": "Calorias Actividad",
+      "pasosActividad": "Pasos Actividad",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

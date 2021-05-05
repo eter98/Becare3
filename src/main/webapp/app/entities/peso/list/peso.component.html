@@ -1,0 +1,80 @@
+<div>
+  <h2 id="page-heading" data-cy="PesoHeading">
+    <span jhiTranslate="becare3App.peso.home.title">Pesos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="becare3App.peso.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-peso"
+        [routerLink]="['/peso/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="becare3App.peso.home.createLabel"> Create a new Peso </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="pesos?.length === 0">
+    <span jhiTranslate="becare3App.peso.home.notFound">No pesos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="pesos && pesos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="pesoKG"><span jhiTranslate="becare3App.peso.pesoKG">Peso KG</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="descripcion">
+            <span jhiTranslate="becare3App.peso.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="fechaRegistro">
+            <span jhiTranslate="becare3App.peso.fechaRegistro">Fecha Registro</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="user.id"><span jhiTranslate="becare3App.peso.user">User</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let peso of pesos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/peso', peso.id, 'view']">{{ peso.id }}</a>
+          </td>
+          <td>{{ peso.pesoKG }}</td>
+          <td>{{ peso.descripcion }}</td>
+          <td>{{ peso.fechaRegistro | formatMediumDatetime }}</td>
+          <td>
+            {{ peso.user?.id }}
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/peso', peso.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/peso', peso.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(peso)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

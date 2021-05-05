@@ -1,0 +1,11 @@
+id;nombre;tipo_identificacion;identificacion;edad;sexo;peso_kg;estatura_cm;oximetria_referencia;temperatura_referencia;ritmo_cardiaco_referencia;presion_sistolica_referencia;presion_distolica_referencia;comentarios;pasos_referencia;calorias_referencia;meta_referencia
+1;payment;CEDULA;43734;58544;OTRO;1052;98586;11606;30458;75022;55730;44138;../fake-data/blob/hipster.txt;90677;77092;primary invoice
+2;Administrador Borders;TARJETA;42085;19860;MASCULINO;26000;16047;75742;52146;68210;85636;62289;../fake-data/blob/hipster.txt;1742;30151;Rojo cross-media
+3;compressing;IDENTIDAD;85078;88824;MASCULINO;9454;23359;82949;3066;76343;63890;65045;../fake-data/blob/hipster.txt;95958;36152;quantify calculating
+4;Re-implementado;IDENTIDAD;90592;14283;OTRO;76583;1001;89294;34788;92701;86655;32161;../fake-data/blob/hipster.txt;18994;57177;Práctico IB Canadian
+5;definición Ladrillo;OTRO;86003;28329;MASCULINO;4487;68792;42707;43523;84922;18702;58432;../fake-data/blob/hipster.txt;76806;9818;Global Humano
+6;navigating Inteligente Account;CEDULA;10625;89924;OTRO;35774;12475;51398;83489;84990;37033;5969;../fake-data/blob/hipster.txt;55053;37600;connect Creativo bandwidth
+7;Account Bacon;CEDULA;95796;53892;OTRO;22496;79719;68296;8933;98803;99572;25602;../fake-data/blob/hipster.txt;50517;78735;flexibilidad
+8;exploit Videojuegos Atún;TARJETA;11058;61435;FEMENINO;69044;9053;14490;56240;3251;56201;69196;../fake-data/blob/hipster.txt;90880;52483;Parcela
+9;e-markets Oficial turn-key;OTRO;61868;19611;MASCULINO;56422;10409;60519;22042;13098;72802;32651;../fake-data/blob/hipster.txt;43672;19857;Metal EXE
+10;Negro Castilla;CEDULA;88242;56441;MASCULINO;71778;13501;28834;44193;26146;59639;9219;../fake-data/blob/hipster.txt;87296;76361;dedicada

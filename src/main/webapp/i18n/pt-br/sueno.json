@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "sueno": {
+      "home": {
+        "title": "Suenos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Sueno",
+        "createOrEditLabel": "Criar ou editar Sueno",
+        "notFound": "Nenhum Sueno encontrado"
+      },
+      "created": "Um novo Sueno foi criado com o identificador {{ param }}",
+      "updated": "Um Sueno foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Sueno foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Sueno {{ id }}?"
+      },
+      "detail": {
+        "title": "Sueno"
+      },
+      "id": "ID",
+      "superficial": "Superficial",
+      "profundo": "Profundo",
+      "despierto": "Despierto",
+      "timeInstant": "Time Instant",
+      "user": "User"
+    }
+  }
+}

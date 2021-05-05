@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "tratamieto": {
+      "home": {
+        "title": "Tratamietos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Tratamieto",
+        "createOrEditLabel": "Crear o editar Tratamieto",
+        "notFound": "Ningún Tratamietos encontrado"
+      },
+      "created": "Un nuevo Tratamieto ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tratamieto ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tratamieto ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tratamieto {{ id }}?"
+      },
+      "detail": {
+        "title": "Tratamieto"
+      },
+      "id": "ID",
+      "descripcionTratamiento": "Descripcion Tratamiento",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin"
+    }
+  }
+}

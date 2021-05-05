@@ -1,0 +1,31 @@
+{
+  "becare3App": {
+    "alarma": {
+      "home": {
+        "title": "Alarmas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Alarma",
+        "createOrEditLabel": "Criar ou editar Alarma",
+        "notFound": "Nenhum Alarma encontrado"
+      },
+      "created": "Um novo Alarma foi criado com o identificador {{ param }}",
+      "updated": "Um Alarma foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Alarma foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Alarma {{ id }}?"
+      },
+      "detail": {
+        "title": "Alarma"
+      },
+      "id": "ID",
+      "timeInstant": "Time Instant",
+      "descripcion": "Descripcion",
+      "procedimiento": "Procedimiento",
+      "titulo": "Titulo",
+      "verificar": "Verificar",
+      "observaciones": "Observaciones",
+      "prioridad": "Prioridad",
+      "user": "User"
+    }
+  }
+}

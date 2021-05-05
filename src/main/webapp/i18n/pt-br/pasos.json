@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "pasos": {
+      "home": {
+        "title": "Pasos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Pasos",
+        "createOrEditLabel": "Criar ou editar Pasos",
+        "notFound": "Nenhum Pasos encontrado"
+      },
+      "created": "Um novo Pasos foi criado com o identificador {{ param }}",
+      "updated": "Um Pasos foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pasos foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pasos {{ id }}?"
+      },
+      "detail": {
+        "title": "Pasos"
+      },
+      "id": "ID",
+      "nroPasos": "Nro Pasos",
+      "timeInstant": "Time Instant",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "peso": {
+      "home": {
+        "title": "Pesos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Peso",
+        "createOrEditLabel": "Crear o editar Peso",
+        "notFound": "Ningún Pesos encontrado"
+      },
+      "created": "Un nuevo Peso ha sido creado con el identificador {{ param }}",
+      "updated": "Un Peso ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Peso ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Peso {{ id }}?"
+      },
+      "detail": {
+        "title": "Peso"
+      },
+      "id": "ID",
+      "pesoKG": "Peso KG",
+      "descripcion": "Descripcion",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

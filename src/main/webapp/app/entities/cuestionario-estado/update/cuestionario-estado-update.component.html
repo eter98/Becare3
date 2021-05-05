@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-cuestionario-estado-heading"
+        data-cy="CuestionarioEstadoCreateUpdateHeading"
+        jhiTranslate="becare3App.cuestionarioEstado.home.createOrEditLabel"
+      >
+        Create or edit a Cuestionario Estado
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.cuestionarioEstado.valor" for="field_valor">Valor</label>
+          <input type="number" class="form-control" name="valor" id="field_valor" data-cy="valor" formControlName="valor" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.cuestionarioEstado.valoracion" for="field_valoracion"
+            >Valoracion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="valoracion"
+            id="field_valoracion"
+            data-cy="valoracion"
+            formControlName="valoracion"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.cuestionarioEstado.pregunta" for="field_pregunta">Pregunta</label>
+          <select class="form-control" id="field_pregunta" data-cy="pregunta" name="pregunta" formControlName="pregunta">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="preguntaOption.id === editForm.get('pregunta')!.value?.id ? editForm.get('pregunta')!.value : preguntaOption"
+              *ngFor="let preguntaOption of preguntasSharedCollection; trackBy: trackPreguntaById"
+            >
+              {{ preguntaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="becare3App.cuestionarioEstado.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

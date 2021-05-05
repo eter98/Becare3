@@ -1,0 +1,28 @@
+{
+  "name": "Farmaceutica",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "direccion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "propietario",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "farmaceutica",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505145539"
+}

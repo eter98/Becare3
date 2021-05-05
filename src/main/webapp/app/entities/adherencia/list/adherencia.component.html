@@ -1,0 +1,108 @@
+<div>
+  <h2 id="page-heading" data-cy="AdherenciaHeading">
+    <span jhiTranslate="becare3App.adherencia.home.title">Adherencias</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="becare3App.adherencia.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-adherencia"
+        [routerLink]="['/adherencia/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="becare3App.adherencia.home.createLabel"> Create a new Adherencia </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="adherencias?.length === 0">
+    <span jhiTranslate="becare3App.adherencia.home.notFound">No adherencias found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="adherencias && adherencias.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="horaToma">
+            <span jhiTranslate="becare3App.adherencia.horaToma">Hora Toma</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="respuesta">
+            <span jhiTranslate="becare3App.adherencia.respuesta">Respuesta</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="valor">
+            <span jhiTranslate="becare3App.adherencia.valor">Valor</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="comentario">
+            <span jhiTranslate="becare3App.adherencia.comentario">Comentario</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="medicamento.id">
+            <span jhiTranslate="becare3App.adherencia.medicamento">Medicamento</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="paciente.id">
+            <span jhiTranslate="becare3App.adherencia.paciente">Paciente</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let adherencia of adherencias; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/adherencia', adherencia.id, 'view']">{{ adherencia.id }}</a>
+          </td>
+          <td>{{ adherencia.horaToma | formatMediumDatetime }}</td>
+          <td>{{ adherencia.respuesta }}</td>
+          <td>{{ adherencia.valor }}</td>
+          <td>{{ adherencia.comentario }}</td>
+          <td>
+            <div *ngIf="adherencia.medicamento">
+              <a [routerLink]="['/medicamento', adherencia.medicamento?.id, 'view']">{{ adherencia.medicamento?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="adherencia.paciente">
+              <a [routerLink]="['/paciente', adherencia.paciente?.id, 'view']">{{ adherencia.paciente?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/adherencia', adherencia.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/adherencia', adherencia.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(adherencia)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

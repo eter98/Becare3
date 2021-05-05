@@ -1,0 +1,28 @@
+{
+  "becare3App": {
+    "notificacion": {
+      "home": {
+        "title": "Notificacions",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Notificacion",
+        "createOrEditLabel": "Criar ou editar Notificacion",
+        "notFound": "Nenhum Notificacion encontrado"
+      },
+      "created": "Um novo Notificacion foi criado com o identificador {{ param }}",
+      "updated": "Um Notificacion foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Notificacion foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Notificacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Notificacion"
+      },
+      "id": "ID",
+      "fechaInicio": "Fecha Inicio",
+      "fechaActualizacion": "Fecha Actualizacion",
+      "estado": "Estado",
+      "tipoNotificacion": "Tipo Notificacion",
+      "token": "Token"
+    }
+  }
+}

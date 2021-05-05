@@ -48,6 +48,33 @@ public class CacheConfiguration {
             createCache(cm, com.be4tech.becare3.domain.User.class.getName());
             createCache(cm, com.be4tech.becare3.domain.Authority.class.getName());
             createCache(cm, com.be4tech.becare3.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.be4tech.becare3.domain.Adherencia.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Agenda.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Alarma.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Caloria.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Condicion.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.CuestionarioEstado.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Dispositivo.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Encuesta.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Farmaceutica.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Fisiometria1.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.FrecuenciaCardiaca.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Ingesta.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.IPS.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Medicamento.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Notificacion.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Oximetria.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Paciente.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Pasos.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Peso.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Pregunta.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.PresionSanguinea.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Programa.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Sueno.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Temperatura.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.TokenDisp.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.TratamientoMedicamento.class.getName());
+            createCache(cm, com.be4tech.becare3.domain.Tratamieto.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

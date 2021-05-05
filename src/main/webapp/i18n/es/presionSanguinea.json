@@ -1,0 +1,27 @@
+{
+  "becare3App": {
+    "presionSanguinea": {
+      "home": {
+        "title": "Presion Sanguineas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Presion Sanguinea",
+        "createOrEditLabel": "Crear o editar Presion Sanguinea",
+        "notFound": "Ningún Presion Sanguineas encontrado"
+      },
+      "created": "Un nuevo Presion Sanguinea ha sido creado con el identificador {{ param }}",
+      "updated": "Un Presion Sanguinea ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Presion Sanguinea ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Presion Sanguinea {{ id }}?"
+      },
+      "detail": {
+        "title": "Presion Sanguinea"
+      },
+      "id": "ID",
+      "presionSanguineaSistolica": "Presion Sanguinea Sistolica",
+      "presionSanguineaDiastolica": "Presion Sanguinea Diastolica",
+      "fechaRegistro": "Fecha Registro",
+      "user": "User"
+    }
+  }
+}

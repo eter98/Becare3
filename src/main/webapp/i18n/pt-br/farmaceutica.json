@@ -1,0 +1,26 @@
+{
+  "becare3App": {
+    "farmaceutica": {
+      "home": {
+        "title": "Farmaceuticas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Farmaceutica",
+        "createOrEditLabel": "Criar ou editar Farmaceutica",
+        "notFound": "Nenhum Farmaceutica encontrado"
+      },
+      "created": "Um novo Farmaceutica foi criado com o identificador {{ param }}",
+      "updated": "Um Farmaceutica foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Farmaceutica foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Farmaceutica {{ id }}?"
+      },
+      "detail": {
+        "title": "Farmaceutica"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "direccion": "Direccion",
+      "propietario": "Propietario"
+    }
+  }
+}

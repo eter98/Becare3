@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="alarma">
+      <h2 data-cy="alarmaDetailsHeading"><span jhiTranslate="becare3App.alarma.detail.title">Alarma</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ alarma.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.timeInstant">Time Instant</span></dt>
+        <dd>
+          <span>{{ alarma.timeInstant | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.descripcion">Descripcion</span></dt>
+        <dd>
+          <span>{{ alarma.descripcion }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.procedimiento">Procedimiento</span></dt>
+        <dd>
+          <span>{{ alarma.procedimiento }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.titulo">Titulo</span></dt>
+        <dd>
+          <span>{{ alarma.titulo }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.verificar">Verificar</span></dt>
+        <dd>
+          <span>{{ alarma.verificar }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.observaciones">Observaciones</span></dt>
+        <dd>
+          <span>{{ alarma.observaciones }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.prioridad">Prioridad</span></dt>
+        <dd>
+          <span>{{ alarma.prioridad }}</span>
+        </dd>
+        <dt><span jhiTranslate="becare3App.alarma.user">User</span></dt>
+        <dd>
+          <span>{{ alarma.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/alarma', alarma.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

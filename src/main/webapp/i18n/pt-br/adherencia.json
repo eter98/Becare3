@@ -1,0 +1,29 @@
+{
+  "becare3App": {
+    "adherencia": {
+      "home": {
+        "title": "Adherencias",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Adherencia",
+        "createOrEditLabel": "Criar ou editar Adherencia",
+        "notFound": "Nenhum Adherencia encontrado"
+      },
+      "created": "Um novo Adherencia foi criado com o identificador {{ param }}",
+      "updated": "Um Adherencia foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Adherencia foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Adherencia {{ id }}?"
+      },
+      "detail": {
+        "title": "Adherencia"
+      },
+      "id": "ID",
+      "horaToma": "Hora Toma",
+      "respuesta": "Respuesta",
+      "valor": "Valor",
+      "comentario": "Comentario",
+      "medicamento": "Medicamento",
+      "paciente": "Paciente"
+    }
+  }
+}
